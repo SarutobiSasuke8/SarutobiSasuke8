@@ -1,23 +1,26 @@
 ## Alexei Udall
 
-**Commercial operator who builds.** I work at the front of the business, in
-revenue and partnerships, and I build the tooling that makes that work
-repeatable. Most of what is here sits at the join between the two: agent
-infrastructure, knowledge systems, and the small tools that come out of doing
-the job.
+**Seventeen years selling, and I ship the infrastructure too.** I work at the
+front of the business, in revenue and partnerships, and I build the tooling
+that makes that work repeatable. Most of what is here sits at the join between
+the two: agent infrastructure, knowledge systems, and the small tools that come
+out of doing the job.
 
 Currently Head of Marketing at [Teneo Protocol](https://teneo-protocol.ai),
-a decentralised AI agent network. Previously seventeen years across SaaS and
-web3 sales.
+a decentralised AI agent network.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/boundary-dark.svg">
+  <img alt="Six MCP servers forming the boundary between an agent and the gated APIs, web sources, job sources, vault and other agents it must not hold directly." src="assets/boundary-light.svg" width="100%">
+</picture>
 
 ---
 
 ### What I build
 
 **Agent infrastructure.** Six Model Context Protocol servers, all TypeScript,
-all built around a single idea: an agent should be able to do the job without
-being handed the keys to everything. Policy layers, audit trails, and tests.
-Not demos.
+all built around one idea: an agent should be able to do the job without being
+handed the keys to everything.
 
 **Knowledge systems.** Obsidian-centred vaults that agents can read from and
 propose into, without being able to quietly rewrite the source of truth.
@@ -40,6 +43,24 @@ it is allowed to see, and what it leaves behind.
 | [**source-pack-mcp**](https://github.com/SarutobiSasuke8/source-pack-mcp) | Structured research source packs. Facts, quotes, numbers, dates, primary links, and a coverage map showing which claims are consistent, contested, or isolated. |
 | [**website-content-mcp**](https://github.com/SarutobiSasuke8/website-content-mcp) | A site's content in agent-readable form. Real DOM parsing to clean markdown, sitemap discovery, disk cache, respects `robots.txt`, rate-limited. |
 
+What "boundary" means in practice. This is the whole of an agent's authority
+in `credential-broker-mcp`, and there is no way to exceed it:
+
+```yaml
+agents:
+  - id: researcher
+    credentials: [github-readonly]   # the token itself never reaches the agent
+    methods: [GET]
+    allow: ["/repos/**"]
+    deny:  ["/repos/*/*/keys"]       # deny always beats allow
+    max_response_bytes: 262144
+```
+
+A request must clear every gate: identity enabled, credential granted, method
+granted, URL inside the credential's own base URL, no deny match, and an
+explicit allow match. Redirects are refused outright, because a redirect could
+point anywhere and the injected credential would follow it.
+
 ---
 
 ### Methodology and tooling
@@ -56,9 +77,13 @@ it is allowed to see, and what it leaves behind.
 ### How I work
 
 I write the specification before the code, and I keep an `AGENTS.md` in every
-repository so that both humans and agents know the rules of the project. If a
-repo here has tests, they run in CI, and I would rather ship something small
-that works than something broad that does not.
+repository so that both humans and agents know the rules of the project. The
+MCP servers are Apache-2.0, and their tests run in CI. I would rather ship
+something small that works than something broad that does not.
+
+**Currently building**, as of August 2026: hardening `jobscout-mcp` and
+pulling the six servers into one composable set rather than six separate
+tools.
 
 ---
 
