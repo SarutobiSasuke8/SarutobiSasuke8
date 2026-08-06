@@ -14,24 +14,42 @@ web3 sales.
 
 ### What I build
 
-**Agent infrastructure.** Model Context Protocol servers with real
-authorisation boundaries. Not demos. Policy layers, audit trails, and tests.
+**Agent infrastructure.** Six Model Context Protocol servers, all TypeScript,
+all built around a single idea: an agent should be able to do the job without
+being handed the keys to everything. Policy layers, audit trails, and tests.
+Not demos.
 
 **Knowledge systems.** Obsidian-centred vaults that agents can read from and
 propose into, without being able to quietly rewrite the source of truth.
 
-**Games.** Small ones, mostly to learn. Godot and pygame.
+**Games.** Small ones, mostly to learn. Godot, pygame, and an older Unity one.
 
 ---
 
-### Start here
+### MCP servers
+
+Each one solves a boundary problem: what the agent is allowed to reach, what
+it is allowed to see, and what it leaves behind.
+
+| Server | What it is |
+|---|---|
+| [**credential-broker-mcp**](https://github.com/SarutobiSasuke8/credential-broker-mcp) | Agents use gated APIs without ever holding the keys. Declarative policy, deny-by-default, secret injected at the last moment, content-free audit record. One decision function shared by the dry-run explainer and the live path, so what it reports and what it enforces cannot drift apart. |
+| [**agent-handoff-mcp**](https://github.com/SarutobiSasuke8/agent-handoff-mcp) | Local-first bounded, auditable handoffs between AI agents. Lifecycle state machine, actor-scoped transitions, depth caps. |
+| [**obsidian-github-mcp**](https://github.com/SarutobiSasuke8/obsidian-github-mcp) | Permissioned gateway letting agents propose changes to a GitHub-hosted Obsidian vault. Path policy, content policy, audit log. |
+| [**jobscout-mcp**](https://github.com/SarutobiSasuke8/jobscout-mcp) | Privacy-first, bring-your-own-connections job discovery across multiple sources. Normalisation, deterministic deduplication, provenance. Stops at discovery: no CVs stored, no ranking, no applying. |
+| [**source-pack-mcp**](https://github.com/SarutobiSasuke8/source-pack-mcp) | Structured research source packs. Facts, quotes, numbers, dates, primary links, and a coverage map showing which claims are consistent, contested, or isolated. |
+| [**website-content-mcp**](https://github.com/SarutobiSasuke8/website-content-mcp) | A site's content in agent-readable form. Real DOM parsing to clean markdown, sitemap discovery, disk cache, respects `robots.txt`, rate-limited. |
+
+---
+
+### Methodology and tooling
 
 | Project | What it is |
 |---|---|
-| [**obsidian-github-mcp**](https://github.com/SarutobiSasuke8/obsidian-github-mcp) | Permissioned MCP gateway letting agents propose changes to a GitHub-hosted Obsidian vault. Path policy, content policy, audit log. TypeScript. |
-| [**agent-handoff-mcp**](https://github.com/SarutobiSasuke8/agent-handoff-mcp) | Local-first MCP server for bounded, auditable handoffs between AI agents. Lifecycle state machine, actor-scoped transitions, depth caps. |
+| [**Meta-Agent-OS**](https://github.com/SarutobiSasuke8/Meta-Agent-OS) | A Markdown operating system for diagnosing, designing, costing, and operating multi-agent systems. Upstream of code, not a runtime. Ten specialist personas, ordered stages, human decision gates. Most multi-agent projects fail because the team builds before it diagnoses. |
 | [**vibe-coding-generalist-template**](https://github.com/SarutobiSasuke8/vibe-coding-generalist-template) | Reusable project template for AI-assisted development. Agent instructions, persona council orchestration, drift checks. |
 | [**Prompt-Library**](https://github.com/SarutobiSasuke8/Prompt-Library) | Curated system prompts for building with AI. Static site, no build step. |
+| [**ai-agent-toolkit**](https://github.com/SarutobiSasuke8/ai-agent-toolkit) | A small, inspectable Python agent workflow. Searches recent Web3 and AI news, summarises with OpenAI or a local Ollama model, shapes it into an X thread. Deliberately readable rather than hidden inside one prompt. |
 
 ---
 
