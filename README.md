@@ -9,6 +9,8 @@ out of doing the job.
 Currently Head of Marketing at [Teneo Protocol](https://teneo-protocol.ai),
 a decentralised AI agent network.
 
+Portfolio: [alexeiudall.com](https://alexeiudall.com) — career evidence, case studies, writing, projects, and a public read-only recruiter MCP.
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/boundary-dark.svg">
   <img alt="Six MCP servers forming the boundary between an agent and the gated APIs, web sources, job sources, vault and other agents it must not hold directly." src="assets/boundary-light.svg" width="100%">
@@ -89,4 +91,6 @@ tools.
 
 ### Elsewhere
 
+- Portfolio: [alexeiudall.com](https://alexeiudall.com)
+- LinkedIn: [alexeiudall](https://www.linkedin.com/in/alexeiudall)
 - X: [@Sarut0biSasuke](https://x.com/Sarut0biSasuke)
