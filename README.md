@@ -70,9 +70,9 @@ point anywhere and the injected credential would follow it.
 | Project | What it is |
 |---|---|
 | [**Meta-Agent-OS**](https://github.com/SarutobiSasuke8/Meta-Agent-OS) | A Markdown operating system for diagnosing, designing, costing, and operating multi-agent systems. Upstream of code, not a runtime. Ten specialist personas, ordered stages, human decision gates. Most multi-agent projects fail because the team builds before it diagnoses. |
-| [**vibe-coding-generalist-template**](https://github.com/SarutobiSasuke8/vibe-coding-generalist-template) | Reusable project template for AI-assisted development. Agent instructions, persona council orchestration, drift checks. |
+| [**agentops-template**](https://github.com/SarutobiSasuke8/agentops-template) | Governed, repo-native operating layer for AI-assisted development. Cross-agent contracts, permission gates, durable state, persona councils, drift checks, and one canonical verification path. |
+| [**obsidian-multi-brain**](https://github.com/SarutobiSasuke8/obsidian-multi-brain) | Local-first architecture for one canonical vault and governed downstream brains. Includes a validated mixed-authority bridge for public-safe agent context, bounded workspaces, and quarantined CRM proposals. |
 | [**Prompt-Library**](https://github.com/SarutobiSasuke8/Prompt-Library) | Curated system prompts for building with AI. Static site, no build step. |
-| [**ai-agent-toolkit**](https://github.com/SarutobiSasuke8/ai-agent-toolkit) | A small, inspectable Python agent workflow. Searches recent Web3 and AI news, summarises with OpenAI or a local Ollama model, shapes it into an X thread. Deliberately readable rather than hidden inside one prompt. |
 
 ---
 
@@ -83,9 +83,35 @@ repository so that both humans and agents know the rules of the project. The
 MCP servers are Apache-2.0, and their tests run in CI. I would rather ship
 something small that works than something broad that does not.
 
-**Currently building**, as of August 2026: hardening `jobscout-mcp` and
-pulling the six servers into one composable set rather than six separate
-tools.
+**Currently building**, as of August 2026: one governed agent stack around
+Control Room, CRM, the local-first vault, explicit handoff/credential/proposal
+boundaries, and a composable acquisition-to-evidence pipeline.
+
+---
+
+### Portfolio Triage 2026-08
+
+I reviewed all 74 repositories and moved 24 more into GitHub's recoverable
+archive state, taking the account from 7 to 31 archived repositories. Nothing
+was deleted. The active portfolio is now organized around 19 Core systems, 18
+bounded product candidates, 10 time-boxed learning projects, and 27 strategic
+archive/low-maintenance holdings.
+
+The consolidation rules are deliberate:
+
+- Public MCP repositories own implementation; private deployments own policy,
+  identities, configuration, and operations.
+- `website-content-mcp` owns bounded acquisition; `source-pack-mcp` owns
+  evidence extraction, provenance, coverage, and persisted packs.
+- `Meta-Agent-OS` owns multi-agent methodology; `agentops-template` owns
+  repository execution and verification.
+- The Obsidian vault remains canonical; satellites receive derived context and
+  return proposals through governed paths.
+
+This pass also merged validator-backed Pattern D support into
+`obsidian-multi-brain`, production hardening into `source-pack-mcp`, npm
+release preparation into `obsidian-github-mcp`, and the cross-platform
+AgentOps template checks.
 
 ---
 
