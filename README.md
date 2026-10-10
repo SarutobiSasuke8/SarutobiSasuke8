@@ -41,7 +41,6 @@ Each one solves a boundary problem: what the agent is allowed to reach, what it 
 | [**source-pack-mcp**](https://github.com/SarutobiSasuke8/source-pack-mcp) | Structured research source packs. Facts, quotes, numbers, dates, primary links, and a coverage map showing which claims are consistent, contested, or isolated. |
 | [**website-content-mcp**](https://github.com/SarutobiSasuke8/website-content-mcp) | A site's content in agent-readable form. Real DOM parsing to clean markdown, sitemap discovery, disk cache, respects `robots.txt`, rate-limited. |
 | [**gimp-agent-mcp**](https://github.com/SarutobiSasuke8/gimp-agent-mcp) | The whole of GIMP 3 for an agent: every PDB procedure and GEGL filter, layered XCF output you can keep editing, one undo step per batch. On [PyPI](https://pypi.org/project/gimp-agent-mcp/) and in the official MCP registry. |
-| [**greenwood**](https://github.com/SarutobiSasuke8/greenwood) | A game index for Robinhood Chain that ranks the build before it prices the token. Website, REST API and MCP server reading the chain directly, and nothing is backfilled: a failed source shows as missing, not guessed. |
 
 What "boundary" means in practice. This is the whole of an agent's authority in `credential-broker-mcp`, and there is no way to exceed it:
 
