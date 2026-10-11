@@ -60,6 +60,11 @@ A request must clear every gate: identity enabled, credential granted, method gr
 
 ### Running MCPs as products
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/release-path-dark.svg">
+  <img alt="The path from repository to product: an MCP server is built, gated by mcp-eval-harness contract tests, hosted behind mcp-host-gateway, and listed on mcprack.dev." src="assets/release-path-light.svg" width="100%">
+</picture>
+
 | Project | What it is |
 |---|---|
 | [**mcp-host-gateway**](https://github.com/SarutobiSasuke8/mcp-host-gateway) | Hosted MCP edge. Bearer JWT auth, plan-based entitlement down to the tool, prompt and resource, per-identity rate limits, streaming relay, and an audit line per call with no bodies or tokens. Fails closed at startup if anything in its config does not add up. |
